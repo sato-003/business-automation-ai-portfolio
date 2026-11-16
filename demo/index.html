@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>業務自動化ポートフォリオ | 公開用デモ</title>
+  <style>
+    :root{font-family:system-ui,-apple-system,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;color:#183249;background:#f4f7fa}*{box-sizing:border-box}body{margin:0}header{background:#112d42;color:white;padding:26px 5vw 22px}header .eyebrow{font-size:12px;letter-spacing:.18em;color:#92d9d0;font-weight:700}header h1{font-size:clamp(23px,3vw,34px);margin:8px 0}header p{margin:0;color:#d4e2e9;font-size:14px}.shell{max-width:1180px;margin:auto;padding:28px 24px 70px}.notice{background:#e4f4f0;border-left:4px solid #189e90;padding:12px 16px;border-radius:8px;font-size:13px;margin-bottom:22px}.tabs{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:22px}.tabs button{appearance:none;border:1px solid #cbd8e0;background:white;color:#31536a;padding:11px 18px;border-radius:9px;font-size:14px;font-weight:700;cursor:pointer}.tabs button[aria-selected=true]{background:#157e76;color:white;border-color:#157e76}.panel{display:none}.panel.active{display:block}.heading{display:flex;align-items:end;justify-content:space-between;gap:20px;margin:4px 0 18px}.heading h2{font-size:23px;margin:0 0 5px}.heading p{margin:0;color:#5d7282;font-size:13px}.badge{font-size:12px;font-weight:700;color:#16776e;background:#e0f4ef;border-radius:999px;padding:7px 11px;white-space:nowrap}.grid{display:grid;grid-template-columns:1.22fr .78fr;gap:18px}.card{background:white;border:1px solid #dce5eb;border-radius:14px;padding:21px;box-shadow:0 5px 20px #153a5510}.card h3{font-size:16px;margin:0 0 16px}.small{font-size:12px;color:#728595}.pipeline{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:18px}.step{background:#f0f5f7;color:#416174;padding:8px 12px;border-radius:8px;font-size:12px;font-weight:700}.step.done{background:#dff3ec;color:#157b6c}.arrow{color:#9bb0bc}.record{border:1px solid #e1e9ed;border-radius:10px;padding:15px;margin-top:11px}.record-head{display:flex;justify-content:space-between;gap:10px}.record strong{font-size:15px}.record p{font-size:13px;color:#5c7483;margin:7px 0 0}.tag{font-size:11px;border-radius:999px;padding:5px 8px;background:#fff0d7;color:#91611a;font-weight:700;white-space:nowrap}.tag.ok{background:#e2f4ee;color:#157761}.fields{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{background:#f6f9fa;border:1px solid #e5ecef;border-radius:9px;padding:10px}.field label{display:block;font-size:11px;color:#72909c;margin-bottom:4px}.field span{font-size:13px;font-weight:700}.callout{margin-top:14px;background:#fff7e7;border:1px solid #f0dfbc;padding:12px;border-radius:9px;color:#765720;font-size:12px}.metric-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:18px}.metric{background:white;border:1px solid #dce5eb;border-radius:12px;padding:16px}.metric strong{display:block;font-size:22px;color:#167f76}.metric span{font-size:11px;color:#677c88}table{border-collapse:collapse;width:100%;font-size:13px}th{text-align:left;background:#f3f7f9;color:#687f8c;font-size:11px}th,td{padding:11px;border-bottom:1px solid #e8eef1}.status{font-size:11px;background:#e3f4ed;color:#188064;border-radius:999px;padding:5px 8px;font-weight:700}.status.wait{background:#fff0d7;color:#91611a}.post{border:1px solid #e2e9ed;border-radius:10px;padding:15px;margin:10px 0}.post h4{margin:0 0 6px;font-size:14px}.post p{font-size:12px;color:#667d89;margin:0}.line{height:9px;background:#e9eef1;border-radius:8px;margin:11px 0}.line.short{width:62%}.action{display:inline-block;margin-top:13px;background:#187e75;color:white;border:0;border-radius:8px;padding:9px 14px;font-size:12px;font-weight:700;cursor:pointer}.action:disabled{opacity:.5;cursor:default}.foot{font-size:12px;color:#768b96;margin-top:16px}@media(max-width:760px){.grid{grid-template-columns:1fr}.metric-row{grid-template-columns:1fr 1fr}.heading{align-items:start}.shell{padding:20px 14px}}
+  </style>
+</head>
+<body>
+<header><div class="eyebrow">SATO-003 / PUBLIC PORTFOLIO DEMO</div><h1>業務の手間を、確認できる仕組みに。</h1><p>CRM・書類整理・情報発信の設計を、架空データだけで再構成したデモです。</p></header>
+<main class="shell">
+  <div class="notice"><strong>公開用デモ</strong> — 会社名・人物・件数・文章はすべて架空です。外部API通信やデータ保存は行いません。</div>
+  <div class="tabs" role="tablist" aria-label="事例を選択">
+    <button type="button" role="tab" aria-selected="true" aria-controls="crm" id="tab-crm" data-panel="crm">01 名刺OCR・CRM</button>
+    <button type="button" role="tab" aria-selected="false" aria-controls="docs" id="tab-docs" data-panel="docs">02 書類名の整理</button>
+    <button type="button" role="tab" aria-selected="false" aria-controls="content" id="tab-content" data-panel="content">03 原稿の確認</button>
+  </div>
+  <section class="panel active" id="crm" role="tabpanel" aria-labelledby="tab-crm">
+    <div class="heading"><div><h2>名刺の取込から顧客管理まで</h2><p>AI抽出の結果を人が確認し、重複候補を調べてから登録する流れ</p></div><span class="badge">GAS · Gemini API · CRM</span></div>
+    <div class="grid"><div class="card"><h3>取込キュー</h3><div class="pipeline"><span class="step done">画像取込</span><span class="arrow">→</span><span class="step done">項目抽出</span><span class="arrow">→</span><span class="step">人が確認</span><span class="arrow">→</span><span class="step">CRM登録</span></div><div class="record"><div class="record-head"><strong>サンプル名刺 001</strong><span class="tag">要確認</span></div><p>デモ企業A ／ 営業担当</p></div><div class="record"><div class="record-head"><strong>サンプル名刺 002</strong><span class="tag ok">確認済み</span></div><p>デモ企業B ／ 企画担当</p></div><div class="callout">設計のポイント：抽出精度にかかわらず、登録前に項目修正と重複確認の段階を設けます。</div></div><div class="card"><h3>抽出結果の確認</h3><div class="fields"><div class="field"><label>会社名</label><span>デモ企業A</span></div><div class="field"><label>担当者</label><span>担当者A（架空）</span></div><div class="field"><label>部署</label><span>営業部</span></div><div class="field"><label>状態</label><span>登録待ち</span></div></div><div class="callout">⚠ 類似する会社名の登録候補があります。確認後に登録します。</div><button class="action" type="button" id="review-button">デモで確認済みにする</button><p class="foot" id="review-status">この操作は画面表示だけを変更します。</p></div></div>
+  </section>
+  <section class="panel" id="docs" role="tabpanel" aria-labelledby="tab-docs">
+    <div class="heading"><div><h2>スキャン書類の名前付け</h2><p>解析結果から候補名を作り、不確かな結果や重複を見える化</p></div><span class="badge">Python · OCR/API設計 · 例外処理</span></div>
+    <div class="metric-row"><div class="metric"><strong>3件</strong><span>デモ対象の架空ファイル</span></div><div class="metric"><strong>1件</strong><span>人による確認が必要</span></div><div class="metric"><strong>0件</strong><span>実際に変更したファイル</span></div></div>
+    <div class="card"><h3>変更前のプレビュー</h3><table><thead><tr><th>元の名前</th><th>候補名</th><th>判定</th></tr></thead><tbody><tr><td>scan_001.pdf</td><td>2026-11-01_議事録_架空プロジェクトの打合せ.pdf</td><td><span class="status">確認候補</span></td></tr><tr><td>scan_002.pdf</td><td>2026-11-01_議事録_架空プロジェクトの打合せ_1.pdf</td><td><span class="status">重複回避</span></td></tr><tr><td>scan_003.pdf</td><td>2026-11-02_案内_件名不明.pdf</td><td><span class="status wait">要確認</span></td></tr></tbody></table><p class="foot">この画面は一覧の再構成です。PDFやOCR結果の実データは含みません。</p></div>
+  </section>
+  <section class="panel" id="content" role="tabpanel" aria-labelledby="tab-content">
+    <div class="heading"><div><h2>記事とSNS原稿の公開前確認</h2><p>媒体別の状態を分け、画像と文章をまとめて確認</p></div><span class="badge">Python · API連携 · レビュー設計</span></div>
+    <div class="grid"><div class="card"><h3>架空の記事候補</h3><div class="post"><h4>小さな店舗の在庫確認を楽にするには</h4><p>カテゴリー：業務改善　／　状態：下書き</p><div class="line"></div><div class="line"></div><div class="line short"></div></div><div class="callout">公開前チェック：事実関係、表現、画像、リンク、媒体ごとの文字数を確認します。</div></div><div class="card"><h3>媒体別の確認状況</h3><div class="record"><div class="record-head"><strong>Web記事</strong><span class="tag ok">確認済み</span></div><p>本文・見出し・画像を確認</p></div><div class="record"><div class="record-head"><strong>X</strong><span class="tag">確認待ち</span></div><p>短文とリンクを確認</p></div><div class="record"><div class="record-head"><strong>Threads</strong><span class="tag">確認待ち</span></div><p>媒体向けの文面を確認</p></div><p class="foot">投稿ボタンや実際の公開処理はありません。</p></div></div>
+  </section>
+</main>
+<script>
+  const tabs = [...document.querySelectorAll('[role="tab"]')];
+  tabs.forEach(tab => tab.addEventListener('click', () => {
+    tabs.forEach(item => item.setAttribute('aria-selected', String(item === tab)));
+    document.querySelectorAll('.panel').forEach(panel => panel.classList.toggle('active', panel.id === tab.dataset.panel));
+  }));
+  document.querySelector('#review-button').addEventListener('click', event => {
+    document.querySelector('#review-status').textContent = '確認済み（デモ表示のみ）。実際の登録は行われません。';
+    event.currentTarget.disabled = true;
+  });
+</script>
+</body>
+</html>
